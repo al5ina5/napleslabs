@@ -1,0 +1,79 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+
+  /* Neon tube text — tweak for brand */
+  --font-glow-core: #0c4a6e;
+  --font-glow-inner: rgba(56, 189, 248, 0.95);
+  --font-glow-outer: rgba(37, 99, 235, 0.85);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+    --font-glow-core: #e0f7ff;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.font-charon {
+  font-family: "Iosevka Charon Mono", monospace;
+  /* font-weight: 300; */
+  font-style: normal;
+}
+
+.font-zalando {
+  font-family: "Zalando Sans Expanded", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+/**
+ * Neon tube / gas-glow text: bright core + two shadow stacks (tight + diffuse).
+ * Core color is dark on light BG, bright on dark BG (see :root / dark :root).
+ */
+a.font-glow,
+.font-glow {
+  color: var(--font-glow-core);
+  -webkit-font-smoothing: antialiased;
+  /* Inner glow: crisp tube edge + immediate cyan bloom */
+  text-shadow:
+    0 0 1px rgba(255, 255, 255, 0.85),
+    0 0 2px var(--font-glow-inner),
+    0 0 6px var(--font-glow-inner),
+    0 0 14px var(--font-glow-inner),
+    /* Outer glow: soft blue halo */
+    0 0 28px var(--font-glow-outer),
+    0 0 52px var(--font-glow-outer),
+    0 0 80px rgba(30, 58, 138, 0.45);
+}
+
+@media (prefers-color-scheme: light) {
+  a.font-glow,
+  .font-glow {
+    /* Stronger bloom so glow reads on white */
+    text-shadow:
+      0 0 1px rgba(56, 189, 248, 0.5),
+      0 0 3px var(--font-glow-inner),
+      0 0 10px var(--font-glow-inner),
+      0 0 22px var(--font-glow-inner),
+      0 0 40px var(--font-glow-outer),
+      0 0 72px var(--font-glow-outer),
+      0 0 100px rgba(30, 58, 138, 0.35);
+  }
+}
