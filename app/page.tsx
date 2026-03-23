@@ -6,9 +6,9 @@ export default function Home() {
     <>
 
 
-      <div className="fixed bottom-0 left-0 right-0 z-50">
+      {/* <div className="fixed bottom-0 left-0 right-0 z-50">
         <p className="text-center text-2xl font-charon font-black">HELLO!</p>
-      </div>
+      </div> */}
 
       <div className="py-12 lg:py-24 space-y-24 lg:space-y-48">
         <div className="max-w-5xl w-full mx-auto px-12 lg:px-24 space-y-12">
@@ -42,8 +42,8 @@ export default function Home() {
             {/* <p className="text-2xl lg:text-4xl font-zalando font-black opacity-80">We'll get back to you as soon as possible.</p> */}
           </div>
           <div className="flex gap-6">
-            <p className="text-2xl font-charon bg-white text-black px-6 py-3 font-black inline-block">Send a Message on Facebook</p>
-            <p className="text-2xl font-charon bg-white text-black px-6 py-3 font-black inline-block">Send an Email</p>
+            {/* <p className="text-2xl font-charon bg-white text-black px-6 py-3 font-black inline-block">Send a Message on Facebook</p> */}
+            {/* <p className="text-2xl font-charon bg-white text-black px-6 py-3 font-black inline-block">Send an Email</p> */}
           </div>
         </div>
 
